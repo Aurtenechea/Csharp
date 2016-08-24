@@ -21,6 +21,12 @@ namespace Ejecicio
             Console.ReadLine();
 */
 
+            Rueda otraRueda = new Rueda("pirelli");
+            // uso la sobrecarga de la clase Rueda.
+
+            Rueda ruedaTres = new Rueda(4);
+
+
             Carrera miCarrera= new Carrera();
             miCarrera.porTiempo(10);
             miCarrera.mostrarCarrera();

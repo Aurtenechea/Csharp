@@ -16,13 +16,19 @@ namespace Ejecicio
         public static int contadorDeObjetos;
         //atributo estatico es de clase no de objeto. 
         private int kmRecorridos;
+        private int tiempoDemorado;
         private static Random rdm;
+
 
 
         public Auto() {
             
             int num = rdm.Next(0, 2);
             this.fabricante = (Efabricante) num;
+
+            this.kmRecorridos = 0;
+            this.tiempoDemorado = 0;
+
 
             this.DI= new Rueda();
             this.DD= new Rueda();
@@ -32,14 +38,35 @@ namespace Ejecicio
             
         }
 
+        static Auto()
+        {
+            Auto.contadorDeObjetos = 0;
+            rdm = new Random();
+            /*
+             *  metodo static se ejecuta una sola vez cuando se crea el primer objeto auto.
+             *  no se puede sobrecargar.
+             */
+        }
+
+
+
+
+
+
         public void mostrarAuto() {
             Console.WriteLine("El fab es: {0}", this.fabricante);
             Console.WriteLine("Y este auto recorrio: {0}", this.kmRecorridos);
 
         }
 
+        public int getKm()
+        {
+            return this.kmRecorridos;
+        }
+
         public void volverACero() {
             this.kmRecorridos = 0;
+            this.tiempoDemorado = 0;
         }
 
         public void agregarKm(int km)
@@ -47,6 +74,10 @@ namespace Ejecicio
             this.kmRecorridos = km;
         }
 
+        public void agregarTiempo(int tiempo)
+        {
+            this.tiempoDemorado = tiempo;
+        }
        
         public static bool compararAuto(Auto uno, Auto dos){
             if (uno.fabricante == dos.fabricante)
@@ -54,13 +85,7 @@ namespace Ejecicio
                 return false;
         }
 
-        static Auto() {
-            Auto.contadorDeObjetos = 0;
-            rdm = new Random();
-            /*
-             *  metodo static se ejecuta una sola vez cuando se crea el primer objeto auto.
-             */
-        }
+       
 
 
     }

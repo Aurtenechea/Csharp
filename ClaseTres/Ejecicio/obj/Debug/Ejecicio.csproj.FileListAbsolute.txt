@@ -13,3 +13,9 @@ D:\cosas\programacion\programasC#\lab2016\ClaseTres\Ejecicio\bin\Debug\Ejecicio.
 E:\cosas\programacion\programasC#\lab2016\ClaseTres\Ejecicio\bin\Debug\Ejecicio.exe.config
 E:\cosas\programacion\programasC#\lab2016\ClaseTres\Ejecicio\obj\Debug\Ejecicio.exe
 E:\cosas\programacion\programasC#\lab2016\ClaseTres\Ejecicio\obj\Debug\Ejecicio.pdb
+D:\Aurtenechea.ignacio\Csharp\ClaseTres\Ejecicio\bin\Debug\Ejecicio.exe.config
+D:\Aurtenechea.ignacio\Csharp\ClaseTres\Ejecicio\obj\Debug\Ejecicio.exe
+D:\Aurtenechea.ignacio\Csharp\ClaseTres\Ejecicio\obj\Debug\Ejecicio.pdb
+D:\Aurtenechea.ignacio\Csharp\ClaseTres\Ejecicio\bin\Debug\Ejecicio.exe
+D:\Aurtenechea.ignacio\Csharp\ClaseTres\Ejecicio\bin\Debug\Ejecicio.pdb
+D:\Aurtenechea.ignacio\Csharp\ClaseTres\Ejecicio\obj\Debug\Ejecicio.csprojResolveAssemblyReference.cache
