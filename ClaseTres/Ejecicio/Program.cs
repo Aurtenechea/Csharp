@@ -28,11 +28,15 @@ namespace Ejecicio
 
 
             Carrera miCarrera= new Carrera();
-            miCarrera.porTiempo(10);
+            miCarrera.correrCarrera( (Tiempo) 15);
+            miCarrera.mostrarCarrera();
+            miCarrera = new Carrera();
+            miCarrera.correrCarrera( (Kilometro) 12);
+
             miCarrera.mostrarCarrera();
             Console.ReadKey();
 
-            
+
         
             
             /*
