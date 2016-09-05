@@ -11,7 +11,6 @@ namespace Ejecicio
         static void Main(string[] args)
         {
             Efabricante fabricante;
-
 /*
             fabricante = Efabricante.Honda;
             Console.WriteLine(fabricante);
@@ -20,7 +19,6 @@ namespace Ejecicio
             Console.WriteLine(fabricante);
             Console.ReadLine();
 */
-
             Rueda otraRueda = new Rueda("pirelli");
             // uso la sobrecarga de la clase Rueda.
 
@@ -32,13 +30,8 @@ namespace Ejecicio
             miCarrera.mostrarCarrera();
             miCarrera = new Carrera();
             miCarrera.correrCarrera( (Kilometro) 12);
-
             miCarrera.mostrarCarrera();
             Console.ReadKey();
-
-
-        
-            
             /*
             Rueda nuevaRueda;
             nuevaRueda = new Rueda();

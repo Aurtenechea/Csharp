@@ -19,3 +19,6 @@ D:\Aurtenechea.ignacio\Csharp\ClaseTres\Ejecicio\obj\Debug\Ejecicio.pdb
 D:\Aurtenechea.ignacio\Csharp\ClaseTres\Ejecicio\bin\Debug\Ejecicio.exe
 D:\Aurtenechea.ignacio\Csharp\ClaseTres\Ejecicio\bin\Debug\Ejecicio.pdb
 D:\Aurtenechea.ignacio\Csharp\ClaseTres\Ejecicio\obj\Debug\Ejecicio.csprojResolveAssemblyReference.cache
+C:\Users\Nacho\Documents\programas\programasCsharp\Csharp\ClaseTres\Ejecicio\bin\Debug\Ejecicio.exe.config
+C:\Users\Nacho\Documents\programas\programasCsharp\Csharp\ClaseTres\Ejecicio\obj\Debug\Ejecicio.exe
+C:\Users\Nacho\Documents\programas\programasCsharp\Csharp\ClaseTres\Ejecicio\obj\Debug\Ejecicio.pdb
