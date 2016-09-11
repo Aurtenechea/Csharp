@@ -8,71 +8,47 @@ namespace Ejecicio
 {
     public class Carrera
     {
-        public Auto auto1;
-        public Auto auto2;
-        public Auto auto3;
-        public Auto auto4;
-        public Auto auto5;
-        public Auto auto6;
+        // depreticated por coleccion 
+        //public Auto auto1;
+        //public Auto auto2;
+        //public Auto auto3;
+        //public Auto auto4;
+        //public Auto auto5;
+        //public Auto auto6;
+        public List<Auto> listaDeAutos;
+
         
         public static Random rdm;
 
-         public Carrera(){
-             auto1 = new Auto();
-             auto2 = new Auto();
-             auto3 = new Auto();
-             auto4 = new Auto();
-             auto5 = new Auto();
-             auto6 = new Auto();
+        #region constructores
+        public Carrera(){
+
+             //auto1 = new Auto();
+             //auto2 = new Auto();
+             //auto3 = new Auto();
+             //auto4 = new Auto();
+             //auto5 = new Auto();
+             //auto6 = new Auto();
+
+             this.listaDeAutos = new List<Auto>();
         }
 
-         //public Carrera(Tiempo tiempo)
-         //{ 
-            
-         //}
-
-         //public Carrera(Kilometro km)
-         //{
-
-         //}
-
-
-
-         static Carrera() {
+         static Carrera()
+         {
              rdm = new Random();
+         }
+        #endregion  
+
+        private void agregarAuto(Auto unAuto) 
+        {
+            this.listaDeAutos.Add(unAuto);
         }
 
-
-         public void porTiempo(int minutos) 
-         {
-             Tiempo varTiempo;
-
-             for (int i = 0; i < minutos; i++)
-             {
-                 this.auto1.agregar(varTiempo = (Tiempo)((int)rdm.Next(10, 100)));
-                 this.auto2.agregar(varTiempo = (Tiempo)((int)rdm.Next(10, 100)));
-                 this.auto3.agregar(varTiempo = (Tiempo)((int)rdm.Next(10, 100)));
-                 this.auto4.agregar(varTiempo = (Tiempo)((int)rdm.Next(10, 100)));
-                 this.auto5.agregar(varTiempo = (Tiempo)((int)rdm.Next(10, 100)));
-                 this.auto6.agregar(varTiempo = (Tiempo)((int)rdm.Next(10, 100)));
-             }
-         }
-
-         public void porKm(int km)
-         {
-             Kilometro varKm;
-             for (int i = 0; i < km; i++)
-             {
-                 this.auto1.agregar(varKm = (Kilometro)((int)rdm.Next(10, 100)));
-                 this.auto2.agregar(varKm = (Kilometro)((int)rdm.Next(10, 100)));
-                 this.auto3.agregar(varKm = (Kilometro)((int)rdm.Next(10, 100)));
-                 this.auto4.agregar(varKm = (Kilometro)((int)rdm.Next(10, 100)));
-                 this.auto5.agregar(varKm = (Kilometro)((int)rdm.Next(10, 100)));
-                 this.auto6.agregar(varKm = (Kilometro)((int)rdm.Next(10, 100)));
-             }
-         }
-
-
+       public static Carrera operator + (Carrera carrera, Auto auto)
+       {
+           carrera.agregarAuto(auto);
+           return carrera;        
+       }
 
          public void correrCarrera(Tiempo tiempo)
          {
@@ -84,82 +60,180 @@ namespace Ejecicio
              this.porKm((int)kilometros);
          }
 
+         public void porTiempo(int minutos)
+         {
+             for (int i = 0; i < minutos; i++)
+             {
+                 foreach (var unAuto in this.listaDeAutos)
+                 {
+                     unAuto.agregar((Tiempo)((int)rdm.Next(10, 100)));
+                 }
+             }
+         }
+
+         public void porKm(int km)
+         {
+             for (int i = 0; i < km; i++)
+             {
+                 foreach (var unAuto in this.listaDeAutos)
+                 {
+                     unAuto.agregar((Kilometro)((int)rdm.Next(10, 100)));
+                 }
+             }
+         }
+
          public void mostrarCarrera()
          {
-             Console.WriteLine("=================================================");
-             Console.WriteLine("La carrera tiene: ");
-             Console.WriteLine();
-             this.auto1.mostrarAuto();
-             this.auto2.mostrarAuto();
-             this.auto3.mostrarAuto();
-             this.auto4.mostrarAuto(); 
-             this.auto5.mostrarAuto();
-             this.auto6.mostrarAuto();
+
+             StringBuilder sb = new StringBuilder();
+             sb.AppendLine("=================================================");
+             sb.AppendLine("La carrera tiene: ");
+
+             //Console.WriteLine("=================================================");
+             //Console.WriteLine("La carrera tiene: ");
+             //Console.WriteLine();
+
+             foreach (Auto unAuto in this.listaDeAutos)
+             {
+                 sb.AppendLine(unAuto.mostrarAuto());
+             }
+             // if (this.listaDeAutos[indice].getTiempo() == 0)
 
              Auto ganador;
              ganador = new Auto();
 
-
-             //max = this.auto1.getKm();
-             //if (max < this.auto2.getKm())
-             //{
-             //    max = this.auto2.getKm();
-             //    ganador = auto2;
-             //}
-             //if (max < this.auto3.getKm())
-             //{
-             //    max = this.auto3.getKm();
-             //    ganador = auto3;
-             //}
-             //if (max < this.auto4.getKm())
-             //{
-             //    max = this.auto4.getKm();
-             //    ganador = auto4;
-             //}
-             //if (max < this.auto5.getKm())
-             //{
-             //    max = this.auto5.getKm();
-             //    ganador = auto5;
-             //}
-             //if (max < this.auto6.getKm())
-             //{
-             //    max = this.auto6.getKm();
-             //    ganador = auto6;
-             //}
-
-
-           //  max = 0;
-
-             Auto[] arrayAutos = new Auto[] { auto1, auto2, auto3, auto4, auto5, auto6 };
-
-             if (this.auto1.getTiempo() == 0)
+             if (this.listaDeAutos[0].getKm() == 0)
              {
-                 for (int i = 0; i < 6; i++)
+                 for (int indice = 0; indice < this.listaDeAutos.Count; indice++)
                  {
-                     if (arrayAutos[i].getKm() > ganador.getKm())
+                     if (this.listaDeAutos[indice].getTiempo() > ganador.getTiempo())
                      {
-                         ganador = arrayAutos[i];
+                         ganador = this.listaDeAutos[indice];
                      }
                  }
-
-                 Console.WriteLine("El ganador recorrio {0} kms.", ganador.getKm());
+                 sb.AppendLine("El ganador tardo " + ganador.getTiempo().ToString() + "tiempo.");
              }
-             else
+             else 
              {
-                 for (int i = 0; i < 6; i++)
+                 for (int indice = 0; indice < this.listaDeAutos.Count; indice++)
                  {
-                     if (arrayAutos[i].getTiempo() > ganador.getTiempo())
+                     if (this.listaDeAutos[indice].getKm() > ganador.getKm())
                      {
-                         ganador = arrayAutos[i];
+                         ganador = this.listaDeAutos[indice];
                      }
+
                  }
-                 Console.WriteLine("El ganador tardo {0} tiempo.", ganador.getTiempo());
+                 //Console.WriteLine("El ganador recorrio {0} kms.", ganador.getKm());
+                 sb.AppendLine("El ganador recorrio " + ganador.getKm().ToString() + "kms.");
+             }
+             Console.Write(sb.ToString());
+        }
+
+         public void volverACero()
+         {
+             foreach (Auto unAuto in this.listaDeAutos)
+             {
+                 unAuto.volverACero();
              }
          }
 
-         public void mostrarCarreraPorKm() { 
-         
-         }
+
+        #region deprecated
+    
+         //public void mostrarCarrera()
+         //{
+         //    Console.WriteLine("=================================================");
+         //    Console.WriteLine("La carrera tiene: ");
+         //    Console.WriteLine();
+
+
+         //    foreach (Auto unAuto in this.listaDeAutos)
+         //    {
+         //        unAuto.mostrarAuto();
+         //    }
+         //    // deprecated por colection
+         //    //this.auto1.mostrarAuto();
+         //    //this.auto2.mostrarAuto();
+         //    //this.auto3.mostrarAuto();
+         //    //this.auto4.mostrarAuto(); 
+         //    //this.auto5.mostrarAuto();
+         //    //this.auto6.mostrarAuto();
+
+         //    Auto ganador;
+         //    ganador = new Auto();
+
+
+         //    //max = this.auto1.getKm();
+         //    //if (max < this.auto2.getKm())
+         //    //{
+         //    //    max = this.auto2.getKm();
+         //    //    ganador = auto2;
+         //    //}
+         //    //if (max < this.auto3.getKm())
+         //    //{
+         //    //    max = this.auto3.getKm();
+         //    //    ganador = auto3;
+         //    //}
+         //    //if (max < this.auto4.getKm())
+         //    //{
+         //    //    max = this.auto4.getKm();
+         //    //    ganador = auto4;
+         //    //}
+         //    //if (max < this.auto5.getKm())
+         //    //{
+         //    //    max = this.auto5.getKm();
+         //    //    ganador = auto5;
+         //    //}
+         //    //if (max < this.auto6.getKm())
+         //    //{
+         //    //    max = this.auto6.getKm();
+         //    //    ganador = auto6;
+         //    //}
+
+
+        //public Carrera(Tiempo tiempo)
+        //{ 
+
+        //}
+
+        //public Carrera(Kilometro km)
+        //{
+
+        //}
+
+         //  //  max = 0;
+
+         //    bool flag = false;
+
+         //    Auto[] arrayAutos = new Auto[] { auto1, auto2, auto3, auto4, auto5, auto6 };
+
+         //    if (this.auto1.getTiempo() == 0)
+         //    {
+         //        for (int i = 0; i < 6; i++)
+         //        {
+         //            if (arrayAutos[i].getKm() > ganador.getKm())
+         //            {
+         //                ganador = arrayAutos[i];
+         //            }
+         //        }
+
+         //        Console.WriteLine("El ganador recorrio {0} kms.", ganador.getKm());
+         //    }
+         //    else
+         //    {
+         //        for (int i = 0; i < 6; i++)
+         //        {
+         //            if (arrayAutos[i].getTiempo() < ganador.getTiempo() || flag == false)
+         //            {
+         //                ganador = arrayAutos[i];
+         //                flag = true;
+         //            }
+         //        }
+         //        Console.WriteLine("El ganador tardo {0} tiempo.", ganador.getTiempo());
+         //    }
+        //}
+        #endregion
+
 
     }
 }

@@ -45,11 +45,8 @@ namespace Ejecicio
              miKm._cantidad -= miKm2._cantidad;
              return miKm;
          }
-
-
-
-
-        public static bool operator ==(Kilometro miKm, int valor)
+        
+         public static bool operator ==(Kilometro miKm, int valor)
          {
              //tiempo en la firma es el valor de retorno
              if (miKm._cantidad == valor)

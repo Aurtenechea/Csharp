@@ -59,22 +59,24 @@ namespace Ejecicio
 
 
 
-        public void mostrarAuto() {
-           
-
+        public string mostrarAuto() 
+        {
+            StringBuilder sb = new StringBuilder();
             if (this.tiempoDemorado == 0)
             {
-                Console.WriteLine("El fab es: {0}", this.fabricante);
-                Console.WriteLine();
-                Console.WriteLine("Y este auto recorrio: {0}", (int)this.kmRecorridos);
-                
+                //sb.AppendLine("El fab es: " + this.fabricante.ToString());
+                sb.AppendFormat("El fab es: {0}", this.fabricante);
+                sb.AppendFormat(" Y este auto recorrio: {0}", (int) this.kmRecorridos);
+                //Console.WriteLine("El fab es: {0}", this.fabricante);                
+                //Console.WriteLine("Y este auto recorrio: {0}", (int)this.kmRecorridos);
                 //falta otro mostrar autoo ve como hacerlo 
+                return sb.ToString();
             }
             else 
             {
-                Console.WriteLine("El fab es: {0}", this.fabricante);
-                Console.WriteLine("Y este auto tardo: {0}", (int)this.tiempoDemorado);
-                //falta otro mostrar autoo ve como hacerlo 
+                sb.AppendLine("El fab es: " + this.fabricante.ToString());
+                sb.AppendLine("Y este auto tardo: " + (int)this.kmRecorridos);
+                return sb.ToString();
             }
         }
 
