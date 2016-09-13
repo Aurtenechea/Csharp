@@ -60,16 +60,16 @@ namespace Ejecicio
             Rueda ruedaTres = new Rueda(4);
 
 
-            Carrera miCarrera= new Carrera();
-            miCarrera = miCarrera + new Auto();
-            miCarrera = miCarrera + new Auto();
-            miCarrera = miCarrera + new Auto();
-            miCarrera = miCarrera + new Auto();
-            miCarrera.correrCarrera((Tiempo)15);
-            miCarrera.mostrarCarrera();
-            miCarrera.volverACero();
-            miCarrera.correrCarrera((Kilometro)20);
-            miCarrera.mostrarCarrera();
+            //Carrera miCarrera= new Carrera();
+            //miCarrera = miCarrera + new Auto();
+            //miCarrera = miCarrera + new Auto();
+            //miCarrera = miCarrera + new Auto();
+            //miCarrera = miCarrera + new Auto();
+            //miCarrera.correrCarrera((Tiempo)15);
+            //miCarrera.mostrarCarrera();
+            //miCarrera.volverACero();
+            //miCarrera.correrCarrera((Kilometro)20);
+            //miCarrera.mostrarCarrera();
 
 
 
@@ -79,7 +79,7 @@ namespace Ejecicio
           //  miCarrera.correrCarrera( (Kilometro) 12);
 
            // miCarrera.mostrarCarrera();
-            Console.ReadKey();
+          //  Console.ReadKey();
 
             /*
             Rueda nuevaRueda;

@@ -12,6 +12,7 @@ namespace Ejecicio
         Chevrolet,
         Honda
 
-        //el que sigue seria 101 y asi..
+        // si a uno se le da el valor de = 100 
+        // el que sigue seria 101 y asi..
 	}
 }

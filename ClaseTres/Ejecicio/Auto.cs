@@ -13,6 +13,7 @@ namespace Ejecicio
         public Rueda DD;
         public Rueda TI;
         public Rueda TD;
+        private string _nombrePiloto;
         public static int contadorDeObjetos;
         //atributo estatico es de clase no de objeto. 
         
@@ -25,23 +26,47 @@ namespace Ejecicio
 
         private static Random rdm;
 
+        // propiedades
+        public string NombrePiloto
+        {
+            set 
+            {
+                this._nombrePiloto = value;
+            }
+            get
+            {
+                return _nombrePiloto;
+            }
+
+        }
+
+        public string DatosEnString
+        {
+            get
+            {
+                return devuelveStringParaListar();
+            }
+
+        }
 
 
         public Auto() {
 
             int num = rdm.Next(0, 2);
             this.fabricante = (Efabricante) num;
-
             this.kmRecorridos= 0;
             this.tiempoDemorado = 0;
-
-
             this.DI= new Rueda();
             this.DD= new Rueda();
             this.TI= new Rueda();
             this.TD= new Rueda();
             Auto.contadorDeObjetos++;
-            
+        }
+
+        public Auto(string nombrePiloto, Efabricante fabricante)  :this()
+        {
+            this._nombrePiloto = nombrePiloto;
+            this.fabricante = fabricante;
         }
 
         static Auto()
@@ -55,7 +80,13 @@ namespace Ejecicio
         }
 
 
-
+         private string devuelveStringParaListar()
+         {
+             StringBuilder sb = new StringBuilder();
+             sb.AppendLine("P:" + this._nombrePiloto + " - " );
+             sb.AppendLine("F:" + this.fabricante);
+             return sb.ToString();
+         }
 
 
 

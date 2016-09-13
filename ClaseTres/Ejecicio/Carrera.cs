@@ -16,12 +16,15 @@ namespace Ejecicio
         //public Auto auto5;
         //public Auto auto6;
         public List<Auto> listaDeAutos;
-
-        
+        public string nombre;
+        public string fecha;
+        public string lugar;
+          
         public static Random rdm;
 
         #region constructores
-        public Carrera(){
+        public Carrera(string nombre, string lugar, string fecha)
+        {
 
              //auto1 = new Auto();
              //auto2 = new Auto();
@@ -29,8 +32,11 @@ namespace Ejecicio
              //auto4 = new Auto();
              //auto5 = new Auto();
              //auto6 = new Auto();
+            this.nombre = nombre;
+            this.lugar = lugar;
+            this.fecha = fecha;
 
-             this.listaDeAutos = new List<Auto>();
+            this.listaDeAutos = new List<Auto>();
         }
 
          static Carrera()
@@ -82,9 +88,10 @@ namespace Ejecicio
              }
          }
 
-         public void mostrarCarrera()
-         {
+        
 
+         public string mostrarCarrera()
+         {
              StringBuilder sb = new StringBuilder();
              sb.AppendLine("=================================================");
              sb.AppendLine("La carrera tiene: ");
@@ -126,7 +133,7 @@ namespace Ejecicio
                  //Console.WriteLine("El ganador recorrio {0} kms.", ganador.getKm());
                  sb.AppendLine("El ganador recorrio " + ganador.getKm().ToString() + "kms.");
              }
-             Console.Write(sb.ToString());
+             return sb.ToString();
         }
 
          public void volverACero()
