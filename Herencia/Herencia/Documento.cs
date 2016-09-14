@@ -14,8 +14,6 @@ namespace Herencia
         
         public int _numeroDeControl; // private se ve solo dentro de esta clase. No en sus herencis.
 
-
-
         public Documento(int num, string fecha, int numCtrl) :this(num) //llama al otro
         {
             this._fecha = fecha;
