@@ -8,8 +8,7 @@ using System.Collections;
 // hay dos tipos de colecciones  -----  
 
 // generic      using System.Collections.Generic;         
-// aca las que tienen           
-// genero.
+// aca las que tienen genero.          
 // list<Autos>
 // stack <autos>
 // queue  <auto>                       

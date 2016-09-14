@@ -30,6 +30,12 @@ namespace CarreraInterface
             cmbResultado.Items.Add("Por Km");
             cmbResultado.SelectedItem = 0;
 
+            cmbOrdenar.Items.Add("Fabricante");
+            cmbOrdenar.Items.Add("Piloto");
+            cmbOrdenar.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbOrdenar.SelectedIndex = 0;
+            rbAsc.Checked = true;
+
             foreach (Efabricante item in Enum.GetValues(typeof(Efabricante)))
             {
                 this.cmbFabricante.Items.Add(item);
@@ -43,6 +49,16 @@ namespace CarreraInterface
             miCarrera = new Carrera(this.txtNombre.Text, this.txtLugar.Text, this.txtFecha.Text);
             grpCarrera.Enabled = false;
             grpAutos.Enabled = true;
+           
+            // testing
+            Auto autito = new Auto("Juancho", (Efabricante)1);
+            this.miCarrera = this.miCarrera + autito;
+            autito = new Auto("zzzz", (Efabricante)2);
+            this.miCarrera = this.miCarrera + autito;
+            autito = new Auto("aaaa", (Efabricante)0);
+            this.miCarrera = this.miCarrera + autito;
+            listarAutos();
+            // end testing
         }
 
         private void btnAgregarAuto_MouseClick(object sender, MouseEventArgs e)
@@ -75,5 +91,39 @@ namespace CarreraInterface
             txtResultado.Text = this.miCarrera.mostrarCarrera();
 
         }
-    }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            switch (this.cmbOrdenar.SelectedIndex)
+            {
+                case 0:
+                    if (rbAsc.Checked == true)
+                    {
+                        this.miCarrera.listaDeAutos.Sort(Auto.ordenarPorFabricanteAsc);
+                    }
+                    else if (rbDesc.Checked == true)
+                    {
+                        this.miCarrera.listaDeAutos.Sort(Auto.ordenarPorFabricanteDesc);
+                    }
+                    break;
+                case 1:
+                    if (rbAsc.Checked == true)
+                    {
+                        this.miCarrera.listaDeAutos.Sort(Auto.ordenarPorPilotoAsc);
+                    }
+                    else if (rbDesc.Checked == true)
+                    {
+                        this.miCarrera.listaDeAutos.Sort(Auto.ordenarPorPilotoDesc);
+                    }
+                    break;
+            }
+            listarAutos();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+     }
 }

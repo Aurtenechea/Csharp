@@ -156,7 +156,23 @@ namespace Ejecicio
             this.kmRecorridos = this.kmRecorridos + km;
         }
 
-       
+        public static int ordenarPorFabricanteAsc(Auto unAuto,Auto otroAuto) 
+        {
+           return string.Compare(unAuto.fabricante.ToString(), otroAuto.fabricante.ToString());
+        }
+        public static int ordenarPorFabricanteDesc(Auto unAuto, Auto otroAuto)
+        {
+            return string.Compare(otroAuto.fabricante.ToString(), unAuto.fabricante.ToString());
+        }
+
+        public static int ordenarPorPilotoAsc(Auto unAuto,Auto otroAuto)
+        {
+            return string.Compare(unAuto._nombrePiloto , otroAuto._nombrePiloto);
+        }
+        public static int ordenarPorPilotoDesc(Auto unAuto, Auto otroAuto)
+        {
+            return string.Compare(otroAuto._nombrePiloto, unAuto._nombrePiloto);
+        }
 
 
     }
