@@ -41,10 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auto.cs" />
+    <Compile Include="AutoExeption.cs" />
+    <Compile Include="Carrera.cs" />
+    <Compile Include="Exeption.cs" />
     <Compile Include="Laboratorio.cs" />
     <Compile Include="Pc.cs" />
+    <Compile Include="PinchaduraExeption.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rueda.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

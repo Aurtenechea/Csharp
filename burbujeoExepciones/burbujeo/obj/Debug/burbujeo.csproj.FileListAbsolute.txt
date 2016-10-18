@@ -1,0 +1,6 @@
+D:\aurtenechea.ignacio\Csharp\burbujeoExepciones\burbujeo\bin\Debug\burbujeo.exe.config
+D:\aurtenechea.ignacio\Csharp\burbujeoExepciones\burbujeo\bin\Debug\burbujeo.exe
+D:\aurtenechea.ignacio\Csharp\burbujeoExepciones\burbujeo\bin\Debug\burbujeo.pdb
+D:\aurtenechea.ignacio\Csharp\burbujeoExepciones\burbujeo\obj\Debug\burbujeo.csprojResolveAssemblyReference.cache
+D:\aurtenechea.ignacio\Csharp\burbujeoExepciones\burbujeo\obj\Debug\burbujeo.exe
+D:\aurtenechea.ignacio\Csharp\burbujeoExepciones\burbujeo\obj\Debug\burbujeo.pdb

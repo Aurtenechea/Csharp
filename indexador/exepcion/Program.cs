@@ -14,8 +14,7 @@ namespace exepcion
             //int numero;
 
             try
-            {
-
+            {   
                 // solo lo que puede dar error (puede ir todo pero no hacerlo)
                 // se ejecuta esto. Si da un error se ejecuta lo que hay en catch.
                 //dato = Console.ReadLine();
@@ -81,7 +80,8 @@ namespace exepcion
         public static void lanzarError()
         {
             throw new Exception("Se quedo sin memoria RAM");
-            
+            //el throw nunca sabe quien lo va a capturar
+            //la idea es que vaya pasando por varios lugares hasta llegar al program con la info de donde fue el error
         }
 
     }
