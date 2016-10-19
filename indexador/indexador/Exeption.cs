@@ -6,24 +6,18 @@ using System.Threading.Tasks;
 
 namespace indexador
 {
-    public class MiExeption : Exception
+    public class miExepcion : Exception
     {
+        public DateTime horaExcepcion;
 
-        public DateTime horaDeLaExepcion;
-        public string horaTextoExepcion;
-
-        public MiExeption(string text, DateTime hora)
-            :base(text)
-        { 
-               
-        }
-
-        public MiExeption( string text, DateTime hora, MiExeption exep )
-            : this(text, hora)
+        public miExepcion(DateTime hora, string mensaje, Exception excepAnterior)
+            : base(mensaje, excepAnterior)
         {
-
+            this.horaExcepcion = hora;
 
         }
+
+        public miExepcion(DateTime hora, string mensaje) : this(hora, mensaje, null) { }
 
     }
 }

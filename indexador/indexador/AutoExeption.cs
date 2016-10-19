@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace indexador
 {
-    class AutoExeption: MiExeption
+    class AutoExeption: miExepcion
     {
-        Auto miAuto;
+        public Auto miAuto;
 
-        public AutoExeption(string text, DateTime time, Auto auto)
-            : base(text, time)
+        public AutoExeption(string mensaje, DateTime fecha, Auto auto,Exception excepAnterior)
+            : base(fecha, mensaje,excepAnterior)
         {
             this.miAuto = auto;
         }
 
-
-
+        public AutoExeption(string mensaje, DateTime fecha, Auto auto) : this(mensaje, fecha, auto, null) { }
     }
 }

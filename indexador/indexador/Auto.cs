@@ -22,9 +22,9 @@ namespace indexador
 
         public void Andar()
         {
-            if (this.numero < 4)
+            if (this.lsRuedas.Count < 4)
             {
-                throw new MiExeption("textoExepcion", new DateTime());
+                throw new MiExeption("Reudas insuficientes", DateTime.Now);
             }
             else
             {
@@ -36,7 +36,11 @@ namespace indexador
 
                     }
                 }
-                catch(PinchaduraExeption ex) { }
+                catch(PinchaduraExeption ex)
+                {
+                    AutoExeption exceptionAuto = new AutoExeption("Pinchadura en rueda " + ex.marca, DateTime.Now, this, ex);
+                    throw exceptionAuto;
+                }
             
             }
         }

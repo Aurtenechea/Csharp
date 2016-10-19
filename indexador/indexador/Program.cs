@@ -77,7 +77,7 @@ namespace indexador
             }
             catch (AutoExeption miExepAuto)
             {
-                
+                Console.WriteLine(miExepAuto.Message);
             }
             catch (PinchaduraExeption miExepPinch)
             {
@@ -85,14 +85,9 @@ namespace indexador
             }
             catch (MiExeption miExep)
             {
-
+                Console.WriteLine(miExep.Message);
             }
             
-
-
-
-
-
 
 
             Console.ReadLine();

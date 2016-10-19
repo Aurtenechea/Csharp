@@ -36,10 +36,6 @@ namespace indexador
             }
         }
 
-
-
-
-
         public Laboratorio(string nombre)
         {
             this.listaDePc = new List<Pc>();

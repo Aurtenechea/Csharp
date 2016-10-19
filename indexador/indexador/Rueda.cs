@@ -25,20 +25,20 @@ namespace indexador
 
         public void Pinchar()
         {
-            throw new PinchaduraExeption("texto PinchaduraExeption", new DateTime(), this.marca );
+            throw new PinchaduraExeption("Rueda Pinchada", DateTime.Now, this.marca);
         }
 
         public void Rodar()
         {
-            int numRan=rd.Next(1, 10);
+            int numRan=rd.Next(1, 11);
 
             if (numRan == 5)
             {
                 this.Pinchar();
             }
-            else {
-
-                Console.WriteLine(numRan.ToString());
+            else 
+            {
+                Console.WriteLine(numRan);
             }
 
 
