@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Generics
 {
-    public class Deposito<T> : IEnumerable<T>
+    public class Deposito<T> : IEnumerable<T> // este para sobreescribir un metodo de foreach
     {
         public List<T> lsProductos;
         public int cantidadMax;
